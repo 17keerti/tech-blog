@@ -20,14 +20,26 @@ router.get("/", (req, res) => {
       const posts = PostData.map((post) => post.get({ plain: true }));
       res.render("homepage", {
         posts,
-        // logged_in: req.session.logged_in,
-        // username: req.session.username,
+        logged_in: req.session.logged_in,
+        username: req.session.username,
       });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
+
+router.get("/signup", (req, res) => {
+  res.render("signup");
 });
 
 module.exports = router;
