@@ -13,7 +13,7 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 // Sets up the Express App
 const app = express();
-const PORT = process.env.PORT | 3001;
+const PORT = process.env.PORT || 3001;
 
 // Incorporate the custom helper methods
 const hbs = exphbs.create({ helpers });
