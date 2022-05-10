@@ -47,13 +47,10 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.post("/", (req, res) => {
+router.post("/", async (req, res) => {
   try {
     console.log("Made it this far");
-    const userData = User.create({
-      username: req.body.username,
-      password: req.body.password,
-    });
+    const userData = await User.create(req.body);
     console.log(userData.username, "Further");
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -64,6 +61,8 @@ router.post("/", (req, res) => {
         .json({ message: `Successfully created ${userData.username}` });
     });
   } catch (err) {
+    console.log("error111");
+    console.log(err);
     res.status(400).json(err);
   }
 });

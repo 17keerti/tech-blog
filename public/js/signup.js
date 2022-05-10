@@ -14,7 +14,9 @@ async function signupFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.replace("/dashboard");
+      setTimeout(function () {
+        document.location.replace("/dashboard");
+      }, 1000);
     } else {
       alert(response.statusText);
     }
