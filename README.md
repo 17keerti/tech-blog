@@ -4,9 +4,20 @@
 
 This project uses the Model-View-Controller (MVC) paradigm to create a blog-style website where developers can create their account, and after logging in they can make posts, edit posts, and comment on other user's posts.
 
+## Technologies Used
+
+- Javascript
+- Node.js
+- Express
+- Handlebars
+- Sequelize
+- NPM
+- MySQL Server
+
 ## Table of Contents
 
 - [Description](#description)
+- [Technologies Used](#Technologies-Used)
 - [Deployment URL](#deployment-url)
 - [Screenshots](#screenshots)
 - [Contact Info](#contact-info)
